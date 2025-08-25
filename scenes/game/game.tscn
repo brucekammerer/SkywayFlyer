@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4tvdamd6b7q5"]
+
+[ext_resource type="Script" uid="uid://dlur5r0jy571" path="res://scenes/game/game.gd" id="1_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://5crujk8saoum" path="res://scenes/plane/plane.tscn" id="1_sul5r"]
+[ext_resource type="PackedScene" uid="uid://ckqlumk6u8ugk" path="res://scenes/boundaries/boundaries.tscn" id="2_7h61r"]
+[ext_resource type="PackedScene" uid="uid://c8yqhqk2hecmi" path="res://scenes/parallax_background/parallax_background.tscn" id="2_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://cie0i1r8win6a" path="res://scenes/user_interface/user_interface.tscn" id="5_5i0tg"]
+[ext_resource type="PackedScene" uid="uid://dnm2l643clhul" path="res://scenes/left_boundary/left_boundary.tscn" id="5_lfrn8"]
+[ext_resource type="AudioStream" uid="uid://r4c7e1hjplx" path="res://assets/audio/engine.mp3" id="6_5i0tg"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_0sr1o")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_bdhmt")]
+layer = -1
+
+[node name="LeftBoundary" parent="." instance=ExtResource("5_lfrn8")]
+position = Vector2(-160, 0)
+
+[node name="Boundaries" parent="." instance=ExtResource("2_7h61r")]
+
+[node name="Plane" parent="." instance=ExtResource("1_sul5r")]
+position = Vector2(96, 427)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="MarkerUpper" type="Marker2D" parent="."]
+position = Vector2(640, 700)
+
+[node name="MarkerLower" type="Marker2D" parent="."]
+position = Vector2(640, 154)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UserInterface" parent="CanvasLayer" instance=ExtResource("5_5i0tg")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5i0tg")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="spawn_pipes"]

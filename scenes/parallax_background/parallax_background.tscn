@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8yqhqk2hecmi"]
+
+[ext_resource type="Texture2D" uid="uid://chqq1e0wjwu4q" path="res://assets/background/rocks_2.png" id="1_lq2ot"]
+[ext_resource type="Texture2D" uid="uid://b8o0hnmatswhm" path="res://assets/background/sky.png" id="1_uqq2u"]
+[ext_resource type="Texture2D" uid="uid://di1q4agfwqc4o" path="res://assets/background/clouds_4.png" id="1_vriu7"]
+[ext_resource type="Texture2D" uid="uid://bj4jbyj7514fx" path="res://assets/background/clouds_3.png" id="2_uqq2u"]
+[ext_resource type="Texture2D" uid="uid://dg1hwdfsdocw8" path="res://assets/background/clouds_2.png" id="3_wlhur"]
+[ext_resource type="Texture2D" uid="uid://ce7d4apythjkf" path="res://assets/background/clouds_1.png" id="4_3c8kc"]
+[ext_resource type="Texture2D" uid="uid://bqekj0e8v03my" path="res://assets/background/rocks_1.png" id="5_om4hx"]
+
+[node name="ParallaxBackground" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uqq2u")
+centered = false
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_vriu7")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-40, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+texture = ExtResource("2_uqq2u")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-60, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+texture = ExtResource("3_wlhur")
+centered = false
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-80, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4"]
+texture = ExtResource("4_3c8kc")
+centered = false
+
+[node name="Parallax2D5" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-120, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D5"]
+texture = ExtResource("5_om4hx")
+centered = false
+
+[node name="Parallax2D6" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-150, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D6"]
+texture = ExtResource("1_lq2ot")
+centered = false
